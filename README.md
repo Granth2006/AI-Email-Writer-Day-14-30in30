@@ -74,7 +74,7 @@
 | 🏆 **Challenge** | 30 Web Apps in 30 Days |
 | 📅 **Day** | Day 14 / 30 |
 | 👤 **Author** | Granth |
-| 🌐 **Live URL** | [https://ai-email-writer-day-14-30in30.vercel.app/](https://ai-email-writer-day-14-30in30.vercel.app/) |
+| 🌐 **Live URL** | [https://ai-email-writer-day-14-30in30.vercel.app/](https://ai-email-writer-30in30.vercel.app/) |
 | 🛠️ **Build** | No build step — pure HTML / CSS / JS |
 | 📄 **License** | MIT |
 
@@ -98,6 +98,6 @@
 
 Built by **[Granth](https://github.com/Granth2006)** &nbsp;·&nbsp; Part of the **30 Web Apps in 30 Days** challenge
 
-[![Live Demo](https://img.shields.io/badge/🚀%20Open%20Live%20Demo-8B5CF6?style=for-the-badge)](https://ai-email-writer-day-14-30in30.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/🚀%20Open%20Live%20Demo-8B5CF6?style=for-the-badge)](https://ai-email-writer-30in30.vercel.app/)
 
 </div>
