@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Email Writer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <main class="app">
+      <header class="app-header panel">
+        <div>
+          <p class="eyebrow">Groq Powered</p>
+          <h1>AI Email Writer</h1>
+          <p class="subtitle">Generate professional emails from short prompts.</p>
+        </div>
+        <div class="header-badges">
+          <span class="badge">Subject + Body</span>
+          <span class="badge">Regenerate</span>
+          <span class="badge">History</span>
+        </div>
+      </header>
+
+      <section class="panel form-panel">
+        <h2>Compose Request</h2>
+        <p class="section-subtitle">Describe your context and choose the output style.</p>
+
+        <form id="email-form" novalidate>
+          <label for="apiKey">Groq API Key</label>
+          <input id="apiKey" name="apiKey" type="password" placeholder="gsk_..." autocomplete="off" />
+          <div class="field-foot">
+            <small class="hint">Stored locally in your browser only.</small>
+          </div>
+
+          <label for="prompt">Prompt</label>
+          <textarea id="prompt" name="prompt" rows="6" maxlength="1200" placeholder="Example: Write a follow-up email after yesterday's product demo asking for feedback." required></textarea>
+          <div class="field-foot">
+            <small id="prompt-counter">0 / 1200</small>
+            <small class="hint">Be specific about context and outcome.</small>
+          </div>
+
+          <div class="grid">
+            <div>
+              <label for="tone">Tone</label>
+              <select id="tone" name="tone">
+                <option value="formal">Formal</option>
+                <option value="friendly">Friendly</option>
+                <option value="confident">Confident</option>
+                <option value="empathetic">Empathetic</option>
+                <option value="persuasive">Persuasive</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="length">Length</label>
+              <select id="length" name="length">
+                <option value="short">Short</option>
+                <option value="medium" selected>Medium</option>
+                <option value="long">Long</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div>
+              <label for="emailType">Email Type</label>
+              <select id="emailType" name="emailType">
+                <option value="general">General</option>
+                <option value="follow-up">Follow-up</option>
+                <option value="introduction">Introduction</option>
+                <option value="request">Request</option>
+                <option value="thank-you">Thank-you</option>
+                <option value="apology">Apology</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="audience">Audience (optional)</label>
+              <input id="audience" name="audience" type="text" maxlength="120" placeholder="e.g., CTO at Acme Corp" />
+            </div>
+          </div>
+
+          <p id="form-error" class="error hidden" role="alert"></p>
+
+          <div class="actions">
+            <button id="generate-btn" type="submit">Generate Email</button>
+            <button id="regenerate-btn" type="button" disabled>Regenerate</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel output-panel">
+        <h2>Generated Email</h2>
+        <div id="status" class="status">Fill in the form and generate an email.</div>
+
+        <article id="result" class="result hidden">
+          <div class="result-header">
+            <h3>Subject</h3>
+            <button class="copy-btn" id="copy-subject" type="button">Copy</button>
+          </div>
+          <p id="subject-output"></p>
+
+          <div class="result-header">
+            <h3>Body</h3>
+            <button class="copy-btn" id="copy-body" type="button">Copy</button>
+          </div>
+          <pre id="body-output"></pre>
+        </article>
+      </section>
+
+      <section class="panel history-panel">
+        <div class="history-header">
+          <h2>Recent History</h2>
+          <button id="clear-history" type="button" class="ghost-btn">Clear</button>
+        </div>
+        <ul id="history-list" class="history-list">
+          <li class="history-empty">No history yet.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
